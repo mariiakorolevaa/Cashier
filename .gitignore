@@ -1,0 +1,8 @@
+# Eclipse project files
+.classpath
+.project
+.settings/
+.git/
+src/module-info.java
+.metadata
+bin
