@@ -2,6 +2,10 @@ package example.com;
 
 import java.util.Scanner;
 
+/**
+ * This solution uses integer arithmetic to avoid floating point errors.
+ * We use cents, namely integers, for all calculations.
+ */
 public class Solution2 {
 
 	private static final int[] DENOMINATIONS_IN_CENTS = { 500 * 100, 200 * 100, 100 * 100, 50 * 100, 20 * 100, 10 * 100,

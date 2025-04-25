@@ -7,6 +7,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * This is a straightforward solution to the problem of calculating the change
+ * to be given by a cashier.
+ */
 public class Solution1 {
 
 	private static int[] bills = { 500, 200, 100, 50, 20, 10, 5 };
