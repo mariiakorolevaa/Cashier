@@ -143,8 +143,16 @@ public class Solution1 {
 		System.out.println("The customer bought items with a total value of ");
 		amountToPay = readValidatedAmount(scanner);
 
-		System.out.println("The customer pays with ");
-		receivedAmount = readValidatedAmount(scanner);
+		while (true) {
+			System.out.println("The customer pays with ");
+			receivedAmount = readValidatedAmount(scanner);
+
+			if (receivedAmount < amountToPay) {
+				System.out.println("Error: received amount is less than the amount to pay. Please try again.");
+			} else {
+				break;
+			}
+		}
 
 		double result = receivedAmount - amountToPay;
 		result = Math.floor(result * 100) / 100;
@@ -158,6 +166,11 @@ public class Solution1 {
 			System.out.println("The cashier cannot use 0.01 Euro coins and 0.02 Euro coins.");
 		}
 
+		long startTime = System.nanoTime();
 		System.out.println(cashier(result, allowSmallCoins));
+		long endTime = System.nanoTime();
+		long duration = endTime - startTime; // duration in nanoseconds
+		System.out.println("Execution time: " + duration + " nanoseconds");
+		
 	}
 }

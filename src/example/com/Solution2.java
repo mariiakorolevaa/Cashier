@@ -147,19 +147,38 @@ public class Solution2 {
 	 * @param args command line arguments (not used)
 	 */
 	public static void main(String[] args) {
+
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("The customer bought items with a total value of ");
 		int amountToPay = readValidatedAmount(scanner);
-		System.out.println("The customer pays with ");
-		int receivedAmount = readValidatedAmount(scanner);
+
+		int receivedAmount = 0;
+		while (true) {
+			System.out.println("The customer pays with ");
+			receivedAmount = readValidatedAmount(scanner);
+
+			if (receivedAmount < amountToPay) {
+				System.out.println("Error: received amount is less than the amount to pay. Please try again.");
+			} else {
+				break;
+			}
+		}
+		
 		int change = receivedAmount - amountToPay;
+
 		System.out.println("Can we use 0.01 Euro coins and 0.02 Euro coins? (yes/no)");
+
 		boolean allowSmallCoins = isSmallCoinAllowed(scanner);
 		if (allowSmallCoins) {
 			System.out.println("The cashier can use 0.01 Euro coins and 0.02 Euro coins.");
 		} else {
 			System.out.println("The cashier cannot use 0.01 Euro coins and 0.02 Euro coins.");
 		}
+
+		long startTime = System.nanoTime();
 		System.out.println(cashier(String.valueOf(change), allowSmallCoins));
+		long endTime = System.nanoTime();
+		long duration = endTime - startTime; // duration in nanoseconds
+		System.out.println("Execution time: " + duration + " nanoseconds");
 	}
 }
