@@ -155,7 +155,7 @@ public class Solution1 {
 		}
 
 		double result = receivedAmount - amountToPay;
-		result = Math.floor(result * 100) / 100;
+		result = Math.round(result * 100) / 100;
 
 		System.out.println("Can we use 0.01 Euro coins and 0.02 Euro coins? (yes/no)");
 
