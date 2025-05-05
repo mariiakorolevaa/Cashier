@@ -106,7 +106,7 @@ public class Solution2 {
 			if (input.matches("^\\d+(\\.\\d{1,2})?$")) {
 				try {
 					double amount = Double.parseDouble(input);
-					return (int) Math.floor(amount * 100);
+					return (int) Math.round(amount * 100);
 				} catch (NumberFormatException ignored) {
 				}
 			}
